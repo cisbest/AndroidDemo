@@ -60,11 +60,13 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //3D地图so及jar
-    implementation 'com.amap.api:3dmap:latest.integration'
+//    implementation 'com.amap.api:3dmap:latest.integration'
 
     //定位功能 会报错Execution failed for task ':app:checkDebugDuplicateClasses'.
 //    implementation 'com.amap.api:location:latest.integration'
 
     //搜索功能
-    implementation 'com.amap.api:search:latest.integration'
+//    implementation 'com.amap.api:search:latest.integration'
+
+    implementation files("libs/AMap3DMap_9.7.0_AMapSearch_9.7.0_AMapLocation_6.3.0_20230529.aar")
 }
