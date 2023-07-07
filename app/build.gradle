@@ -6,6 +6,21 @@ android {
     namespace 'cn.cisbest.app'
     compileSdk 33
 
+    signingConfigs {
+        debug {
+            storeFile file('E:\\AndroidCode\\android jks\\local.jks')
+            storePassword '666666'
+            keyAlias 'local'
+            keyPassword '666666'
+        }
+        release {
+            storeFile file('E:\\AndroidCode\\android jks\\local.jks')
+            storePassword '666666'
+            keyPassword '666666'
+            keyAlias 'local'
+        }
+    }
+
     defaultConfig {
         applicationId "cn.cisbest.app"
         minSdk 28
@@ -16,8 +31,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    android.applicationVariants.all  {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "MapTest.apk"
+            }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            debuggable true
+        }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
