@@ -4,7 +4,12 @@
 # Gradle files
 .gradle/
 build/
+release/
+debug/
 /build
+/release
+/*/debug
+/*/release
 
 # Local configuration file (sdk path, etc)
 local.properties
